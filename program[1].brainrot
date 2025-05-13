@@ -1,0 +1,31 @@
+vibe score = 72;
+vibe attendance = 85;
+
+spill "Checking student eligibility...";
+
+funk evaluate(score, attendance) {
+    delulu score >= 50 {
+        spill "Score meets the requirement";
+
+        delulu attendance >= 75 {
+            spill "Attendance is sufficient";
+            spill "Student is eligible for exam";
+        } nah {
+            spill "Attendance is too low";
+            spill "Student is not eligible despite good score";
+        }
+
+    } 
+    nah {
+        spill "Score is too low";
+        spill "Student is not eligible for exam";
+    }
+}
+
+evaluate(score, attendance);
+
+vibe score2 = 45;
+vibe attendance2 = 80;
+
+spill "Checking second student eligibility...";
+evaluate(score2, attendance2);
